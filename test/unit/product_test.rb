@@ -68,4 +68,12 @@ class ProductTest < ActiveSupport::TestCase
                  product.errors[:title].join('; ')
   end
 
+  test "product title is not valid under 10 characters" do
+    product = products(:ruby)
+    assert product.valid?
+
+    product.title = "123456789"
+    assert product.invalid?
+  end
+
 end

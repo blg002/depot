@@ -5,6 +5,8 @@ class StoreController < ApplicationController
 
     @session_count = increment_session_count
     @session_count_message = "You have visited this page #{@session_count} times since your last purchase" if @session_count > 5
+
+    @cart = current_cart
   end
 
   private

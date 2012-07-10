@@ -1,4 +1,7 @@
 class OrdersController < ApplicationController
+
+  skip_before_filter :authorize, only: [:new, :create]
+
   # GET /orders
   # GET /orders.json
   def index
@@ -92,4 +95,5 @@ class OrdersController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
 end

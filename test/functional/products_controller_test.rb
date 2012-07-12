@@ -2,6 +2,7 @@ require 'test_helper'
 
 class ProductsControllerTest < ActionController::TestCase
   setup do
+    # login_as :one  # better way to test with logins
     @product = products(:one)
     @update = {
       title:       'Lorem Ipsum',
